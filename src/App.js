@@ -1,13 +1,16 @@
-import { useState } from "react";
+//import { useState } from "react";
+import useCounter from "./useCounter";
 const App = (props) => {
-  const [counter, setCounter] = useState(0);
+  //const [counter, setCounter] = useState(0);
+  const counter = useCounter();
 
   return (
     <div>
-      <div>{counter}</div>
-      <button onClick={() => setCounter(counter + 1)}>plus</button>
-      <button onClick={() => setCounter(counter - 1)}>minus</button>
-      <button onClick={() => setCounter(0)}>zero</button>
+      <div>{counter.value}</div>
+      <button onClick={counter.increase}>plus</button>
+      {/* <button onClick={() => setCounter(counter - 1)}>minus</button> */}
+      <button onClick={counter.decrease}>minus</button>
+      <button onClick={counter.zero}>zero</button>
     </div>
   );
 };
