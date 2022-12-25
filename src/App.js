@@ -3,6 +3,8 @@ import useCounter from "./useCounter";
 const App = (props) => {
   //const [counter, setCounter] = useState(0);
   const counter = useCounter();
+  const left = useCounter();
+  const right = useCounter();
 
   return (
     <div>
@@ -11,6 +13,11 @@ const App = (props) => {
       {/* <button onClick={() => setCounter(counter - 1)}>minus</button> */}
       <button onClick={counter.decrease}>minus</button>
       <button onClick={counter.zero}>zero</button>
+
+      <div>{left.value}</div>
+      <button onClick={left.increase}>left</button>
+      <button onClick={right.increase}>right</button>
+      <div>{right.value}</div>
     </div>
   );
 };
